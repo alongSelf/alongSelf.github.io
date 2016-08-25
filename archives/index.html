@@ -19,6 +19,7 @@
     <link rel="icon" href="https://alongself.github.io/img/head.png">
   
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="js/highlight/styles/atom-one-light.css">
 </head>
 
 <body>
@@ -63,11 +64,11 @@
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
-						<li>Menu</li>
-						<li>Tags</li>
+						<li>菜单</li>
+						<li>标签</li>
 						
 						
-						<li>About</li>
+						<li>关于我</li>
 						
 					</ul>
 				</div>
@@ -402,9 +403,16 @@
 		open_in_new: false
 	}
 </script>
+<script src="/js/highlight/highlight.pack.js"></script>
 <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 <script src="/js/main.js"></script>
-
+<script>
+$(document).ready(function() {
+  $('.code pre ').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+</script>
 
 
 
