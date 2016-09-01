@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Laravel任务调度 | 醉落魄</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="参考我参考的是laravel学院的任务调度 Laravel 5.1 文档 ] 服务 —— 任务调度
+1.定义调度在App\Console\Kernel类的schedule方法中定义所有调度任务。我用的是用任务调去每分钟去执行App\Http\Controllers\QrCode\QrCodeController类中的scheduleMakeQrcode方法具体代码在下面12345678910111">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Laravel任务调度">
+<meta property="og:url" content="http://yoursite.com/2016/09/01/Laravel任务调度/index.html">
+<meta property="og:site_name" content="醉落魄">
+<meta property="og:description" content="参考我参考的是laravel学院的任务调度 Laravel 5.1 文档 ] 服务 —— 任务调度
+1.定义调度在App\Console\Kernel类的schedule方法中定义所有调度任务。我用的是用任务调去每分钟去执行App\Http\Controllers\QrCode\QrCodeController类中的scheduleMakeQrcode方法具体代码在下面12345678910111">
+<meta property="og:updated_time" content="2016-09-01T14:32:33.221Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Laravel任务调度">
+<meta name="twitter:description" content="参考我参考的是laravel学院的任务调度 Laravel 5.1 文档 ] 服务 —— 任务调度
+1.定义调度在App\Console\Kernel类的schedule方法中定义所有调度任务。我用的是用任务调去每分钟去执行App\Http\Controllers\QrCode\QrCodeController类中的scheduleMakeQrcode方法具体代码在下面12345678910111">
+  
+    <link rel="alternative" href="/atom.xml" title="醉落魄" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://alongself.github.io//img/head.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://alongself.github.io/js/highlight/styles/atom-one-light.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://alongself.github.io//img/head.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">醉落魄</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/php">php</a></li>
+				        
+							<li><a href="/tags/java">java</a></li>
+				        
+							<li><a href="/tags/javascript">javascript</a></li>
+				        
+							<li><a href="/tags/mood">文字</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/bootstrap/" style="font-size: 20px;">bootstrap</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/laravel/" style="font-size: 10px;">laravel</a> <a href="/tags/mood/" style="font-size: 10px;">mood</a> <a href="/tags/php/" style="font-size: 15px;">php</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">不忘初心方得始终,邮箱(zztongruilin@163.com)</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">醉落魄</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img lazy-src="https://alongself.github.io//img/head.png" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">醉落魄</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/php">php</a></li>
+		        
+					<li><a href="/tags/java">java</a></li>
+		        
+					<li><a href="/tags/javascript">javascript</a></li>
+		        
+					<li><a href="/tags/mood">文字</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Laravel任务调度" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/01/Laravel任务调度/" class="article-date">
+  	<time datetime="2016-09-01T14:01:54.000Z" itemprop="datePublished">2016-09-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Laravel任务调度
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/laravel/">laravel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>我参考的是laravel学院的任务调度<br><a href="http://laravelacademy.org/post/235.html" target="_blank" rel="external"> Laravel 5.1 文档 ] 服务 —— 任务调度</a></p>
+<h1 id="1-定义调度"><a href="#1-定义调度" class="headerlink" title="1.定义调度"></a>1.定义调度</h1><p>在App\Console\Kernel类的schedule方法中定义所有调度任务。<br>我用的是用任务调去每分钟去执行<code>App\Http\Controllers\QrCode\QrCodeController</code>类中的<code>scheduleMakeQrcode</code>方法<br>具体代码在下面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"></div><div class="line">namespace App\Console;</div><div class="line"></div><div class="line">use App\Http\Model\QrCodeModel;</div><div class="line">use Illuminate\Support\Facades\DB;</div><div class="line">use SimpleSoftwareIO\QrCode\Facades\QrCode;</div><div class="line">use Faker\Provider\Uuid;</div><div class="line">use Illuminate\Console\Scheduling\Schedule;</div><div class="line">use Illuminate\Foundation\Console\Kernel as ConsoleKernel;</div><div class="line"></div><div class="line">class Kernel extends ConsoleKernel</div><div class="line">&#123;</div><div class="line">    /**</div><div class="line">     * The Artisan commands provided by your application.</div><div class="line">     *</div><div class="line">     * @var array</div><div class="line">     */</div><div class="line">    protected $commands = [</div><div class="line">        //</div><div class="line">    ];</div><div class="line"></div><div class="line">    /**</div><div class="line">     * Define the application&apos;s command schedule.</div><div class="line">     *</div><div class="line">     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule</div><div class="line">     * @return void</div><div class="line">     */</div><div class="line">    protected function schedule(Schedule $schedule)</div><div class="line">    &#123;</div><div class="line">        // $schedule-&gt;command(&apos;inspire&apos;)</div><div class="line">        //          -&gt;hourly();</div><div class="line">        //任务调度批量生成二维码</div><div class="line">        $schedule-&gt;call(&apos;App\Http\Controllers\QrCode\QrCodeController@scheduleMakeQrcode&apos;)-&gt;everyMinute();</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * Register the Closure based commands for the application.</div><div class="line">     *</div><div class="line">     * @return void</div><div class="line">     */</div><div class="line">    protected function commands()</div><div class="line">    &#123;</div><div class="line">        require base_path(&apos;routes/console.php&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>还有一种直接用闭包的方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$schedule-&gt;call(function () &#123;</div><div class="line">          DB::table(&apos;recent_users&apos;)-&gt;delete();</div><div class="line">      &#125;)-&gt;daily();</div></pre></td></tr></table></figure></p>
+<p>批量生成二维码的代码如下<br>我用的是Simple QrCode 扩展包生成二维码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public function scheduleMakeQrcode()</div><div class="line">  &#123;</div><div class="line">      </div><div class="line">          $uuid = Uuid::uuid();//图片UUID</div><div class="line">          $filename = $uuid . &apos;.png&apos;;</div><div class="line">          $path = base_path() ./qrcodeimg/&apos; . $filename;</div><div class="line">          $content = &quot;https://alongself.github.io&quot;</div><div class="line">          QrCode::format(&apos;png&apos;)-&gt;size(300)-&gt;margin(10)-&gt;generate($content, path);</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<h1 id="2-执行任务"><a href="#2-执行任务" class="headerlink" title="2.执行任务"></a>2.执行任务</h1><p>执行任务的 命令是这个<code>artisan schedule:run</code></p>
+<h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><p>在linux中我们需要用到Cron<br>然后执行<code>* * * * * php /path/to/artisan schedule:run 1&gt;&gt; /dev/null 2&gt;&amp;1</code></p>
+<h2 id="window"><a href="#window" class="headerlink" title="window"></a>window</h2><p>我的方法是在项目命令写上一个bat文件 然后用计划任务每分钟去调用一次<br>bat文件的内容其实也很简单如下<br><code>php D:\php\phpStudy\WWW\qrcode\artisan schedule:run</code><br>只要更上项目路径就可以了<br>接着写计划任务<br>每分钟去调用执行定义好的bat文件命令如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">schtasks /create /tn batMakeQrCode /tr D:\php\phpStudy\WWW\qrcode\artisan.bat /sc minute /mo 1</div></pre></td></tr></table></figure>
+<p><code>batMakeQrCode</code>就是任务的名称了<br>如果要根据名称是删除一个任务的话命名在下面<br><code>schtasks /delete /tn batMakeQrCode</code></p>
+<h1 id="3-调度常用选项"><a href="#3-调度常用选项" class="headerlink" title="3.调度常用选项"></a>3.调度常用选项</h1><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-&gt;cron(‘<em> </em> <em> </em> *’);</td>
+<td>在自定义Cron调度上运行任务</td>
+</tr>
+<tr>
+<td>-&gt;everyMinute();</td>
+<td>每分钟运行一次任务</td>
+</tr>
+<tr>
+<td>-&gt;everyFiveMinutes();</td>
+<td>每五分钟运行一次任务</td>
+</tr>
+<tr>
+<td>-&gt;everyTenMinutes();</td>
+<td>每十分钟运行一次任务</td>
+</tr>
+<tr>
+<td>-&gt;everyThirtyMinutes();</td>
+<td>每三十分钟运行一次任务</td>
+<td></td>
+</tr>
+<tr>
+<td>-&gt;hourly();</td>
+<td>每小时运行一次任务</td>
+</tr>
+<tr>
+<td>-&gt;daily();</td>
+<td>每天凌晨零点运行任务</td>
+</tr>
+<tr>
+<td>-&gt;dailyAt(‘13:00’);</td>
+<td>每天13:00运行任务</td>
+</tr>
+<tr>
+<td>-&gt;twiceDaily(1, 13);</td>
+<td>每天1:00 &amp; 13:00运行任务</td>
+</tr>
+<tr>
+<td>-&gt;weekly();</td>
+<td>每周运行一次任务</td>
+</tr>
+<tr>
+<td>-&gt;monthly();</td>
+<td>每月运行一次任务</td>
+</tr>
+</tbody>
+</table>
+<p>这些方法可以和额外的约束一起联合起来创建一周特定时间运行的更加细粒度的调度，例如，要每周一调度一个命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$schedule-&gt;call(function () &#123;</div><div class="line">    // 每周星期一13:00运行一次...</div><div class="line">&#125;)-&gt;weekly()-&gt;mondays()-&gt;at(&apos;13:00&apos;);</div></pre></td></tr></table></figure></p>
+<p>下面是额外的调度约束列表：<br>| 方法 | 描述 |<br>|——|——-|<br>|–&gt;weekdays();|-     只在工作日运行任务–|<br>|–&gt;sundays(); |-    每个星期天运行任务–|<br>|–&gt;mondays(); |-    每个星期一运行任务–|<br>|–&gt;tuesdays(); |-    每个星期二运行任务–|<br>|–&gt;wednesdays(); |-    每个星期三运行任务–|<br>|–&gt;thursdays(); |-    每个星期四运行任务–|<br>|–&gt;fridays(); |-    每个星期五运行任务–|<br>|–&gt;saturdays(); |-    每个星期六运行任务–|<br>|–&gt;when(Closure); |-    基于特定测试运行任务–|</p>
+<h2 id="3-1-基于测试的约束条件"><a href="#3-1-基于测试的约束条件" class="headerlink" title="3.1 基于测试的约束条件"></a>3.1 基于测试的约束条件</h2><p>when方法用于限制任务在通过给定测试之后运行。换句话说，如果给定闭包返回true，只要没有其它约束条件阻止任务运行，该任务就会执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$schedule-&gt;command(&apos;emails:send&apos;)-&gt;daily()-&gt;when(function () &#123;</div><div class="line">    return true;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/26/bootstrapFrom/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">bootstrap(3)表单</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 醉落魄
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/highlight/highlight.pack.js"></script>
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+<script>
+$(document).ready(function() {
+  $('.code pre ').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
